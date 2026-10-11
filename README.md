@@ -1,6 +1,5 @@
 # Project Argos
 
-The interface uses a green HUD palette: `#00FF66` and `#39FF14` for active marks, `#00AA55` and `#008F11` for grid and telemetry, and `#002211` / `#050C08` for panels and canvas. Color definitions live in `src/argos/ui_theme.py`.
 
 Project Argos is a local, consent-based stereo computer-vision prototype. It captures one or two webcams, optionally rectifies stereo images, detects faces with OpenCV YuNet, stabilizes detections with persistent track IDs, and shows image coordinates in a minimal C-scope display. Optional local ArcFace recognition uses explicitly enrolled templates.
 
