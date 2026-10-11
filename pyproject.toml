@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "project-argos"
+version = "0.1.0"
+description = "Local, consent-based stereo vision and tracking prototype"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24", "opencv-python>=4.8,<5", "PyYAML>=6.0", "onnxruntime>=1.17", "Pillow>=10"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+argos = "argos.app:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

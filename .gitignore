@@ -1,0 +1,29 @@
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+*.npz
+calibration/*.yml
+calibration/*.yaml
+data/
+models/
+
+# Python build and install artifacts
+build/
+dist/
+*.egg-info/
+
+# Local editor and operating system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local environment and credentials
+.env
+.env.*
+!.env.example
+
+# Launcher output
+logs/

@@ -1,0 +1,36 @@
+cameras:
+  mode: stereo  # single or stereo; CLI --mode overrides this
+  left_index: 0
+  right_index: 1
+  width: 640
+  height: 480
+  fps: 30
+  baseline_m: 0.12
+  calibration_file: calibration/stereo.yml
+detection:
+  provider: yunet
+  model_path: models/face_detection_yunet_2023mar.onnx
+  score_threshold: 0.8
+  nms_threshold: 0.3
+  top_k: 5000
+  input_size: frame  # frame or an integer square detector input size (for example 320)
+tracking:
+  max_center_distance_px: 90
+  max_missed_frames: 12
+  ema_alpha: 0.3
+identity:
+  enabled: true
+  model_path: models/w600k_r50.onnx
+  templates_path: data/face_templates.json
+  similarity_threshold: 0.45
+  suggestion_threshold: 0.37
+  ambiguity_margin: 0.04
+  unknown_recheck_seconds: 1.5  # retry saved-template recognition in the background for unknown live tracks
+  duplicate_check_interval_seconds: 60
+  duplicate_similarity_threshold: 0.92  # high cosine similarity; user confirms before anything is deleted
+visualization:
+  window_name: Argos — C-scope
+  show_boxes: true
+performance:
+  detection_cadence: 1  # run YuNet once every N frames; tracker bridges intervening frames
+  profile: false
